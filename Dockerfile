@@ -11,5 +11,6 @@ RUN apk add git logrotate openssl
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./jobs/updateworldmods.sh /etc/periodic/minute/updateworldmods
 COPY ./jobs/collectstatic.sh /etc/periodic/15min/collectstatic
+COPY ./jobs/logrotate.sh /etc/periodic/minute/logrotate
 
 CMD ["/entrypoint.sh"]
