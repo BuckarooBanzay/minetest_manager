@@ -9,8 +9,6 @@ Manages:
 * worldmod updates (if a submodule-repo is used)
 * media generation
 * error log publish
-
-TODO:
 * logrotate
 
 # Environment variables
