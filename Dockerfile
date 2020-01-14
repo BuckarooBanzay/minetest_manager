@@ -1,0 +1,15 @@
+FROM alpine
+
+# prepare minute job dir for crond
+RUN mkdir /etc/periodic/minute
+RUN echo "* * * * * run-parts /etc/periodic/minute" >> /etc/crontabs/root
+
+# add deps
+RUN apk add git logrotate openssl
+
+# add local files
+COPY ./entrypoint.sh /entrypoint.sh
+COPY ./jobs/updateworldmods.sh /etc/periodic/minute/updateworldmods
+COPY ./jobs/collectstatic.sh /etc/periodic/15min/collectstatic
+
+CMD ["/entrypoint.sh"]
