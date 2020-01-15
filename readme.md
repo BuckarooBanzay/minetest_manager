@@ -8,7 +8,6 @@ state: WIP
 Manages:
 * worldmod updates (if a submodule-repo is used)
 * media generation
-* error log publish
 * logrotate
 
 # Environment variables
@@ -19,7 +18,6 @@ Manages:
 * **MEDIADIR** directory for media assets (optional)
 
 * **DEBUG_LOG** path to the debug log (optional)
-* **ERROR_LOG_OUTPUT** output file of the error log (optional)
 
 # Usage
 
@@ -32,7 +30,6 @@ docker run \
  -e WORLDMODS_BRANCH=master \
  -e MEDIADIR=/html \
  -e DEBUG_LOG=/logs/debug.log \
- -e ERROR_LOG_OUTPUT=/logs/error.log \
  buckaroobanzay/minetest_manager
 ```
 
