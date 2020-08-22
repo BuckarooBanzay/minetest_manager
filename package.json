@@ -1,0 +1,19 @@
+{
+  "name": "minetest_manager",
+  "version": "1.0.0",
+  "description": "minetest_manager for docker ------------ state: WIP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuckarooBanzay/minetest_manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BuckarooBanzay/minetest_manager/issues"
+  },
+  "homepage": "https://github.com/BuckarooBanzay/minetest_manager#readme"
+}
