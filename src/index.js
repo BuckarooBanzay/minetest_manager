@@ -13,5 +13,5 @@ var Docker = require('dockerode');
 var docker = new Docker({socketPath: '/var/run/docker.sock'});
 
 docker.listContainers()
-.then(list => console.log(list))
+.then(list => console.log(list, list[0].Mounts))
 .catch(e => console.error(e));
