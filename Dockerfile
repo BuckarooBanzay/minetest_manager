@@ -1,16 +1,25 @@
-FROM alpine:3.12.0
+# Stage 1 testing
+FROM node:14.7.0-alpine
 
-# prepare minute job dir for crond
-RUN mkdir /etc/periodic/minute
-RUN echo "* * * * * run-parts /etc/periodic/minute" >> /etc/crontabs/root
+COPY package.json /app/
+COPY package-lock.json /app/
+COPY .jshintrc /app/
+COPY src /app/src
 
-# add deps
-RUN apk add git logrotate openssl
+RUN cd /app && npm i && npm test
 
-# add local files
-COPY ./entrypoint.sh /entrypoint.sh
-COPY ./jobs/updateworldmods.sh /etc/periodic/minute/updateworldmods
-COPY ./jobs/collectstatic.sh /etc/periodic/15min/collectstatic
-COPY ./jobs/logrotate.sh /etc/periodic/minute/logrotate
 
-CMD ["/entrypoint.sh"]
+# Stage 2 package
+FROM node:14.7.0-alpine
+
+COPY package.json /app/
+COPY package-lock.json /app/
+COPY src /app/src
+
+RUN cd /app && npm i --only=production
+
+WORKDIR /app
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
