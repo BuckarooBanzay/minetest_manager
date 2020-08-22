@@ -6,7 +6,8 @@ services:
   ports:
    - "8080:8080"
   volumes:
-   - "./data:/data"
+   - "./tmp/mt-mgr-data:/data"
    - "/var/run/docker.sock:/var/run/docker.sock"
   environment:
    INSTANCE_NAME: dummy
+   HOST_DATA_DIR: /tmp/mt-mgr-data

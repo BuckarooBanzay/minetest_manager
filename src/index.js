@@ -1,6 +1,9 @@
 const app = require("./app");
 const enableWs = require('express-ws');
 
+console.log(`Instance name: ${process.env.INSTANCE_NAME}`);
+console.log(`Data directory: ${process.env.HOST_DATA_DIR}`);
+
 // enable websockets
 enableWs(app);
 
