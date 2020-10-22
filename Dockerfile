@@ -1,4 +1,4 @@
-FROM alpine:3.12.0
+FROM alpine:3.12.1
 
 # prepare minute job dir for crond
 RUN mkdir /etc/periodic/minute
