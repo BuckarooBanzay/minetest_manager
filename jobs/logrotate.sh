@@ -5,6 +5,7 @@ test -f "$DEBUG_LOG" || exit
 cat << EOF > /etc/logrotate.conf
 ${DEBUG_LOG} {
     monthly
+    maxsize 1G
     rotate 120
     compress
     dateext
