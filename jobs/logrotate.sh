@@ -9,7 +9,7 @@ ${DEBUG_LOG} {
     compress
     dateext
     copytruncate
-    su root
+    su root root
 }
 EOF
 
