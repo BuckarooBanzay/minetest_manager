@@ -19,7 +19,7 @@ git submodule init
 git submodule sync
 
 # updated commits
-git submodule update
+git submodule update --init --recursive
 
 # removed directories
 git clean -dff
