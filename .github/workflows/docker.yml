@@ -18,7 +18,7 @@ jobs:
         cache: true
 
     - name: Update pandorabox deployment
-      uses: peter-evans/repository-dispatch@v1
+      uses: peter-evans/repository-dispatch@v2
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         repository: pandorabox-io/pandorabox.io
